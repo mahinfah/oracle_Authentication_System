@@ -45,8 +45,8 @@ public class Start extends JFrame {
 
     private void placeComponents(JPanel panel) {
         panel.setLayout(null);
-
-        JLabel title = new JLabel("Turf Details");
+        setLocationRelativeTo(null);
+         JLabel title = new JLabel("Turf Details");
         title.setBounds(230, 20, 150, 25);
         panel.add(title);
 
