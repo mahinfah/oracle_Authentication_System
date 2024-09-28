@@ -7,13 +7,16 @@ public class main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Oracle Authentication System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 410);
-        // Create a login button
-        JButton loginButton = new JButton("Login");
-    
+        frame.setSize(620, 410);
+       
+  JButton loginButton = new JButton("Enter");
+      loginButton.setFont(new Font("Arial", Font.PLAIN, 20));
+      loginButton.setBackground(Color.BLACK);
+      loginButton.setForeground(Color.gray);
+      loginButton.setBounds(300, 100, 200, 100);
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            // Open Start.java
+ 
             new LoginUI();
             frame.dispose(); // Close the current frame
             }
