@@ -23,11 +23,6 @@ public class LoginUI extends JFrame {
   private static final String DB_PASSWORD = "turf_rent";
   private static final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
 
-  //DB_DRIVER holds the name of the Oracle JDBC driver class, which is essential for enabling JDBC operations with an Oracle database in the LoginUI application
-
-  // DB_URL provides all the necessary information for the JDBC driver to establish a connection to the Oracle database running on the local machine, listening on port 1521, and identified by the SID "XE".
-
-
 
     public LoginUI() {
         setTitle("DATA_BASE");
