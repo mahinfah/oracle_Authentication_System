@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Oracle Authentication System");
+        JFrame frame = new JFrame("Turf Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(620, 410);
        
