@@ -1,39 +1,3 @@
-
-/**
- * This class represents a simple login user interface for an Oracle database authentication system.
- * It uses Swing components to create a graphical user interface (GUI) for user login.
- * The application connects to an Oracle database to verify user credentials.
- * 
- * Database Packages Usage:
- * - java.sql.Connection: Used to establish a connection to the database.
- * - java.sql.DriverManager: Used to manage a set of JDBC drivers.
- * - java.sql.PreparedStatement: Used to execute parameterized SQL queries.
- * - java.sql.ResultSet: Used to store the result set of a query.
- * 
- * Key Components:
- * - DB_URL: The URL for the Oracle database connection.
- * - DB_USER: The username for the Oracle database.
- * - DB_PASSWORD: The password for the Oracle database.
- * - DB_DRIVER: The Oracle JDBC driver class name.
- * 
- * GUI Components:
- * - JFrame: The main window of the application.
- * - JPanel: The main panel containing all other components.
- * - JLabel: Labels for displaying text.
- * - JTextField: Text field for user input.
- * - JPasswordField: Password field for user input.
- * - JButton: Button for triggering the login action.
- * 
- * Methods:
- * - LoginUI(): Constructor to set up the main frame and panel.
- * - placeComponents(JPanel panel): Method to place and configure GUI components on the panel.
- * - checkUserCredentials(String username, String password): Method to check user credentials against the database.
- * 
- * Usage:
- * - Run the main method to start the application.
- * - Enter the username and password, then click the "Login" button to authenticate.
- * - If the credentials are correct, a success message is displayed; otherwise, an error message is shown.
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
