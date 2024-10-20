@@ -9,7 +9,19 @@ public class main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(620, 410);
        
-  JButton loginButton = new JButton("Enter");
+JButton loginButton = new JButton("Enter");
+JButton registerButton = new JButton("Register");
+
+registerButton.setFont(new Font("Arial", Font.PLAIN, 20));
+registerButton.setBackground(Color.BLACK);
+registerButton.setForeground(Color.gray);
+registerButton.setBounds(300, 220, 200, 100);
+registerButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+                // Add action for register button here
+                System.out.println("Register button clicked");
+        }
+});
       loginButton.setFont(new Font("Arial", Font.PLAIN, 20));
       loginButton.setBackground(Color.BLACK);
       loginButton.setForeground(Color.gray);
