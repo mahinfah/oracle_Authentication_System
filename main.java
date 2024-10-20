@@ -22,11 +22,12 @@ registerButton.addActionListener(new ActionListener() {
                 System.out.println("Register button clicked");
         }
 });
+
       loginButton.setFont(new Font("Arial", Font.PLAIN, 20));
       loginButton.setBackground(Color.BLACK);
       loginButton.setForeground(Color.gray);
       loginButton.setBounds(300, 100, 200, 100);
-        loginButton.addActionListener(new ActionListener() {
+      loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
  
             new LoginUI();
