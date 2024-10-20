@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +16,7 @@ public class Register extends JFrame {
 
     public Register() {
         setTitle("Register");
-        setSize(400, 300);
+        setSize(500, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -43,6 +47,9 @@ public class Register extends JFrame {
         nidField.setBounds(150, 100, 200, 25);
         panel.add(nidField);
 
+        panel.setLayout(null);  
+        panel.setBackground(new Color(230, 240, 255));  
+
         JLabel phoneLabel = new JLabel("Phone:");
         phoneLabel.setFont(new Font("Arial", Font.BOLD, 14));
         phoneLabel.setBounds(50, 140, 80, 25);
@@ -68,25 +75,40 @@ public class Register extends JFrame {
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Handle registration logic here
                 String name = nameField.getText();
                 String nid = nidField.getText();
                 String phone = phoneField.getText();
                 String password = new String(passField.getPassword());
 
-                // For now, just print the values to the console
-                System.out.println("Name: " + name);
-                System.out.println("NID: " + nid);
-                System.out.println("Phone: " + phone);
-                System.out.println("Password: " + password);
+                // Database connection and insertion logic
+                String url = "jdbc:oracle:thin:@localhost:1521:XE"; // Update with your DB URL
+                String user = "turf_rent"; // Update with your DB username
+                String dbPassword = "turf_rent"; // Update with your DB password
+
+                String sql = "INSERT INTO User_table (user_name, nid, phone_no, password) VALUES (?, ?, ?, ?)";
+
+                try (Connection conn = DriverManager.getConnection(url, user, dbPassword);
+                     PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                    pstmt.setString(1, name);
+                    pstmt.setString(2, nid);
+                    pstmt.setString(3, phone);
+                    pstmt.setString(4, password);
+
+                    int rowsInserted = pstmt.executeUpdate();
+                    if (rowsInserted > 0) {
+                        JOptionPane.showMessageDialog(null, "Registration successful!");
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+                }
             }
         });
     }
-    
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 new Register().setVisible(true);
             }
