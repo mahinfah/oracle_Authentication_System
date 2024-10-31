@@ -2,4 +2,3 @@
 
 
 <img src="https://codeshack.io/secure-login-system-php-mysql/" width = 1500 alt="" />
-![Uploading Screenshot (32).png…]()
