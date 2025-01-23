@@ -22,14 +22,14 @@ public class Start extends JFrame {
     private JLabel labelDurationData;
     private JLabel labelRentPriceData;
     private JLabel labelAdminNameData;
-
+//connection starts --------------------------------------------------------------------
     private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
     private static final String DB_USER = "turf_rent";
     private static final String DB_PASSWORD = "turf_rent";
     private static final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
 
     private static final String SQL_QUERY = "SELECT * FROM turf WHERE turf_name=?";
-
+//---------------------------------------------------------------------------------------
     public Start() {
         setTitle("Turf Search");
         setSize(600, 500);
